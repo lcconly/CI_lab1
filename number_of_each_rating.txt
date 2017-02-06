@@ -1,0 +1,6 @@
+the number of 0-star is 0
+the number of 1-star is 6110
+the number of 2-star is 11370
+the number of 3-star is 27145
+the number of 4-star is 34174
+the number of 5-star is 21201

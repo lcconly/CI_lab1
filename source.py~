@@ -49,13 +49,10 @@ mtx=csr_matrix((data,(row,col)))
 #time2=time.time()
 #print("index:%d  time:%f shape:%d  %d"%(mtx.nnz,time2-time1,mtx.shape[0],mtx.shape[1]))
 
-
-#**************** write Mathematic Aggregation data to files  *********************#
-'''
 mmwrite("MovieLens.mtx",mtx)
 
 #####print the number of users, items, ratings to file
-f=open(os.path.join(__location__,"number_user_item_count.txt"),'w')
+f=open(os.path.join(__location__,"number_count.txt"),'w')
 print("the number of user: %d\nthe number of item: %d\nthe number of rating: %d"%(mtx.shape[0],mtx.shape[1],mtx.nnz),file=f)
 f.close()
 
@@ -82,6 +79,7 @@ f.close()
 f=open(os.path.join(__location__,"number_of_each_rating.txt"),'w')
 count_rate=[0,0,0,0,0,0]
 row=mtx.nonzero()[0]
+print(row)
 col=mtx.nonzero()[1]
 for index in range(len(mtx.nonzero()[0])):
     if mtx[row[index],col[index]]==0:
@@ -96,8 +94,6 @@ for index in range(len(mtx.nonzero()[0])):
        count_rate[4]=count_rate[4]+1
     elif mtx[row[index],col[index]]==5:
        count_rate[5]=count_rate[5]+1
-print("the number of 0-star is %d\nthe number of 1-star is %d\n"%(count_rate[0],count_rate[1])
-	+"the number of 2-star is %d\nthe number of 3-star is %d\n"%(count_rate[2],count_rate[3])
-	+"the number of 4-star is %d\nthe number of 5-star is %d"%(count_rate[4],count_rate[5]),file=f)
-f.close()
-'''
+print("the number of 0-star is %d\nthe number of 1-star is %d\nthe number of 2-star is %d\n"%()
+      +"the number of 3-star is %d\nthe number of 4-star is %d\nthe number of 5-star is %d"%(count_rate[0],count_rate[1],count_rate[2],count_rate[3],count_rate[4],count_rate[5]))
+        
